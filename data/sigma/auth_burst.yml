@@ -1,0 +1,12 @@
+title: Authentication Failure Burst (Sigma count rule)
+id: sentinelx-sigma-002
+description: Five or more authentication failures from one source within five minutes.
+level: high
+tags:
+  - attack.credential-access
+  - T1110
+timeframe: 5m
+detection:
+  selection:
+    action: failure
+  condition: selection | count() >= 5 by source_ip

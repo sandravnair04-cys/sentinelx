@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SENTINELX - Agentic AI Security Operations Center">
+  <title>SENTINELX | Agentic AI SOC Analyst</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <!-- ===================== LOGIN ===================== -->
+  <div id="login-screen" class="login-screen">
+    <div class="login-bg-grid"></div>
+    <div class="login-card">
+      <div class="brand login-brand">
+        <div class="brand-mark">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 3 6 11v13c0 11 7.6 18.6 18 21 10.4-2.4 18-10 18-21V11L24 3Z" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="m15 24 6 6 12-13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <div class="brand-name">SENTINEL<span>X</span></div>
+          <div class="brand-tag">AGENTIC AI SECURITY OPERATIONS CENTER</div>
+        </div>
+      </div>
+      <h1 class="login-title">Secure Analyst Access</h1>
+      <p class="login-sub">Authenticate to enter the security operations console.</p>
+      <form id="login-form" autocomplete="on">
+        <label class="field-label" for="login-user">Username</label>
+        <input id="login-user" class="input" type="text" required autocomplete="username" placeholder="analyst">
+        <label class="field-label" for="login-pass">Password</label>
+        <input id="login-pass" class="input" type="password" required autocomplete="current-password" placeholder="••••••••••">
+        <div id="login-error" class="form-error" hidden></div>
+        <button class="btn btn-primary btn-block" type="submit">Sign In <span class="arrow">→</span></button>
+      </form>
+      <div class="login-demo">
+        <strong>Lab credentials</strong>
+        <span>admin / Admin@123!</span>
+        <span>analyst / Analyst@123!</span>
+        <small>All dashboard data is clearly labelled as simulated lab data.</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== APP SHELL ===================== -->
+  <div id="app-shell" class="app-shell" hidden>
+    <aside class="sidebar" id="sidebar">
+      <div class="brand side-brand">
+        <div class="brand-mark">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 3 6 11v13c0 11 7.6 18.6 18 21 10.4-2.4 18-10 18-21V11L24 3Z" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="m15 24 6 6 12-13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <div class="brand-name">SENTINEL<span>X</span></div>
+          <div class="brand-tag">AGENTIC AI SOC</div>
+        </div>
+      </div>
+      <nav class="nav" id="nav">
+        <div class="nav-section">OPERATIONS</div>
+        <a class="nav-item" href="#/overview" data-page="overview"><span class="nav-icon">◉</span>Overview Dashboard</a>
+        <a class="nav-item" href="#/monitoring" data-page="monitoring"><span class="nav-icon">◉</span>Live Monitoring</a>
+        <a class="nav-item" href="#/detection" data-page="detection"><span class="nav-icon">◈</span>Threat Detection</a>
+        <div class="nav-section">INVESTIGATION</div>
+        <a class="nav-item" href="#/investigation" data-page="investigation"><span class="nav-icon">✦</span>AI Investigation Centre</a>
+        <a class="nav-item" href="#/incidents" data-page="incidents"><span class="nav-icon">▤</span>Incident Management</a>
+        <a class="nav-item" href="#/response" data-page="response"><span class="nav-icon">⛨</span>Incident Response Centre</a>
+        <a class="nav-item" href="#/agents" data-page="agents"><span class="nav-icon">⚙</span>AI Agent Monitoring</a>
+        <div class="nav-section">INTELLIGENCE</div>
+        <a class="nav-item" href="#/intel" data-page="intel"><span class="nav-icon">◇</span>Threat Intelligence</a>
+        <a class="nav-item" href="#/reports" data-page="reports"><span class="nav-icon">▧</span>Security Reports</a>
+        <a class="nav-item" href="#/settings" data-page="settings"><span class="nav-icon">☰</span>System Settings</a>
+      </nav>
+      <div class="side-footer">
+        <div class="status-dot"></div>
+        <div>
+          <div class="side-footer-title" id="mode-label">Fallback mode</div>
+          <div class="side-footer-sub" id="db-label">SQLite · Simulated data</div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="main-wrap">
+      <header class="topbar">
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">☰</button>
+        <div>
+          <div class="topbar-title" id="page-title">Overview Dashboard</div>
+          <div class="topbar-crumb">SENTINELX / <span id="page-crumb">Overview</span></div>
+        </div>
+        <div class="topbar-right">
+          <div class="live-pill"><span class="pulse"></span> LIVE MONITORING</div>
+          <div class="clock" id="clock">--:--:-- UTC</div>
+          <div class="user-chip"><span class="avatar" id="user-avatar">A</span><span id="user-name">analyst</span><span class="role-tag" id="user-role">ANALYST</span></div>
+          <button class="btn btn-ghost btn-sm" id="logout-btn">Sign out</button>
+        </div>
+      </header>
+      <main class="content" id="page"></main>
+    </div>
+  </div>
+
+  <div id="toast-container" class="toast-container"></div>
+  <div id="modal-root"></div>
+
+  <script src="/static/vendor/chart.umd.min.js"></script>
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

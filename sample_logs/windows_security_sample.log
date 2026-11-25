@@ -1,0 +1,22 @@
+# SENTINELX lab sample - Windows Security Event Log summaries (SIMULATED DATA)
+# Format: <UTC timestamp> EventID=<id> Account Name=<user> Source Network Address=<ip> Computer=<host> <description>
+2026-11-19T08:01:12Z EventID=4624 Account Name=alice Source Network Address=10.0.0.22 Computer=WIN-WS-01 An account was successfully logged on.
+2026-11-19T08:02:45Z EventID=4624 Account Name=bob Source Network Address=10.0.0.35 Computer=WIN-WS-02 An account was successfully logged on.
+2026-11-19T08:05:03Z EventID=4672 Account Name=alice Source Network Address=10.0.0.22 Computer=WIN-WS-01 Special privileges assigned to new logon.
+2026-11-19T08:10:19Z EventID=4625 Account Name=administrator Source Network Address=203.0.113.77 Computer=WIN-SRV-01 An account failed to log on. Status=0xC000006A
+2026-11-19T08:10:27Z EventID=4625 Account Name=administrator Source Network Address=203.0.113.77 Computer=WIN-SRV-01 An account failed to log on. Status=0xC000006A
+2026-11-19T08:10:35Z EventID=4625 Account Name=administrator Source Network Address=203.0.113.77 Computer=WIN-SRV-01 An account failed to log on. Status=0xC000006A
+2026-11-19T08:10:44Z EventID=4625 Account Name=administrator Source Network Address=203.0.113.77 Computer=WIN-SRV-01 An account failed to log on. Status=0xC000006A
+2026-11-19T08:10:52Z EventID=4625 Account Name=administrator Source Network Address=203.0.113.77 Computer=WIN-SRV-01 An account failed to log on. Status=0xC000006A
+2026-11-19T08:11:01Z EventID=4625 Account Name=administrator Source Network Address=203.0.113.77 Computer=WIN-SRV-01 An account failed to log on. Status=0xC000006A
+2026-11-19T08:11:09Z EventID=4625 Account Name=root Source Network Address=203.0.113.77 Computer=WIN-SRV-01 An account failed to log on. Status=0xC000006A
+2026-11-19T08:11:18Z EventID=4625 Account Name=guest Source Network Address=203.0.113.77 Computer=WIN-SRV-01 An account failed to log on. Status=0xC000006A
+2026-11-19T08:12:02Z EventID=4625 Account Name=admin Source Network Address=203.0.113.77 Computer=WIN-SRV-01 An account failed to log on. Status=0xC000006A
+2026-11-19T08:12:40Z EventID=4624 Account Name=administrator Source Network Address=203.0.113.77 Computer=WIN-SRV-01 An account was successfully logged on.
+2026-11-19T08:12:41Z EventID=4672 Account Name=administrator Source Network Address=203.0.113.77 Computer=WIN-SRV-01 Special privileges assigned to new logon.
+2026-11-19T08:14:10Z EventID=4624 Account Name=carol Source Network Address=10.0.0.41 Computer=WIN-WS-03 An account was successfully logged on.
+2026-11-19T08:20:31Z EventID=4625 Account Name=svc_backup Source Network Address=10.0.0.9 Computer=WIN-SRV-02 An account failed to log on. Status=0xC000006A
+2026-11-19T08:20:38Z EventID=4625 Account Name=svc_backup Source Network Address=10.0.0.9 Computer=WIN-SRV-02 An account failed to log on. Status=0xC000006A
+2026-11-19T08:20:46Z EventID=4624 Account Name=svc_backup Source Network Address=10.0.0.9 Computer=WIN-SRV-02 An account was successfully logged on.
+2026-11-19T08:25:00Z EventID=4672 Account Name=SYSTEM Source Network Address=- Computer=WIN-SRV-02 Special privileges assigned to new logon.
+2026-11-19T08:30:15Z EventID=4624 Account Name=dave Source Network Address=10.0.0.55 Computer=WIN-WS-04 An account was successfully logged on.

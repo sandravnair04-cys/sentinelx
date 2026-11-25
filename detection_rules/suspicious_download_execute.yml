@@ -1,0 +1,14 @@
+title: Suspicious Download and Execute Command
+id: sentinelx-sigma-001
+description: Detects shell commands that download a payload and execute it.
+level: high
+tags:
+  - attack.execution
+  - T1059
+logsource:
+  product: linux
+detection:
+  selection:
+    action: process
+    message|contains: 'curl'
+  condition: selection

@@ -1,0 +1,47 @@
+# Secrets / environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.coverage
+htmlcov/
+dist/
+build/
+
+# Runtime data (never commit real logs or databases)
+data/*.db
+data/*.db-journal
+data/*.db-wal
+data/*.db-shm
+data/logs/
+*.log
+!data/samples/*.log
+!sample_logs/*.log
+
+# Reports
+data/reports/
+
+# Frontend / forwarder runtime
+node_modules/
+frontend/dist/
+forwarder/state/
+forwarder/config.yaml
+forwarder/*.key
+*.bak
+.env.local
+
+# Editors / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

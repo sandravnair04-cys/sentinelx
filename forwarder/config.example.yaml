@@ -1,0 +1,65 @@
+# SentinelX Universal Log Forwarder (SXUF) — example configuration
+# Copy to config.yaml and edit. Keep the agent key in an environment variable
+# (SXUF_AGENT_KEY) rather than in this file whenever possible.
+
+agent:
+  id: "sxuf-win-01"            # must match the id registered on the server
+  # key: "sxuf_..."            # OPTIONAL: prefer SXUF_AGENT_KEY environment variable
+  # key_file: "agent.key"      # OPTIONAL: read the key from a protected local file
+
+server:
+  url: "https://sentinelx.example.com"
+  tls_verify: true             # never disable in production
+  # ca_bundle: "/etc/ssl/certs/internal-ca.pem"
+  timeout_seconds: 15
+
+endpoint:
+  # hostname: "WIN-LAB-01"     # auto-detected when omitted
+  # os_type: "windows"         # windows | linux (auto-detected when omitted)
+
+runtime:
+  batch_size: 100              # max events per HTTP request (server limit: 1000)
+  heartbeat_seconds: 60
+  flush_seconds: 5             # collection/flush loop interval
+  max_buffer_events: 50000
+  max_retries: 5
+  state_dir: "state"           # buffer, checkpoints, dedupe DB and health.json
+
+# Only sources listed here are collected. No source means nothing is collected.
+sources:
+  # --- Windows: Security, System and Application channels ---
+  - kind: windows_event
+    name: windows-security
+    channel: Security
+    event_ids: [4624, 4625, 4672, 4688, 4720, 4732, 1102]
+    poll_seconds: 2
+    batch_size: 64
+
+  - kind: windows_event
+    name: windows-system
+    channel: System
+    event_ids: [7045, 7034, 6005, 6006]
+    batch_size: 64
+
+  - kind: windows_event
+    name: windows-application
+    channel: Application
+    event_ids: [1000, 1001]
+    batch_size: 64
+
+  # --- Linux: file sources (adjust paths to your distribution) ---
+  # - kind: file
+  #   name: linux-auth
+  #   path: /var/log/auth.log
+  #   poll_seconds: 2
+  #   batch_size: 64
+  #
+  # - kind: file
+  #   name: linux-syslog
+  #   path: /var/log/syslog
+  #   poll_seconds: 5
+  #
+  # - kind: journal
+  #   name: linux-journal-ssh
+  #   poll_seconds: 5
+  #   batch_size: 64

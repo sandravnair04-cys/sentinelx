@@ -1,0 +1,14 @@
+[
+  {
+    "timestamp": "2026-11-19T09:10:02Z",
+    "agent": {"id": "001", "name": "WIN-SRV-01"},
+    "rule": {"id": "5716", "level": 10, "description": "Multiple failed logins in a short period of time.", "groups": ["authentication", "failed_login"]},
+    "data": {"srcip": "203.0.113.77", "dstuser": "administrator", "event_id": "4625"}
+  },
+  {
+    "timestamp": "2026-11-19T09:10:09Z",
+    "agent": {"id": "001", "name": "WIN-SRV-01"},
+    "rule": {"id": "1002", "level": 12, "description": "Windows: Special privileges assigned to new logon.", "groups": ["privilege"]},
+    "data": {"srcip": "203.0.113.77", "dstuser": "administrator"}
+  }
+]
